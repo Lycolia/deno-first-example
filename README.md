@@ -51,6 +51,10 @@ describe('index', () => {
 });
 ```
 
+### assertEquals が型推論しない
+
+-   `unknown` なのでどうしようもない
+
 ### Lint 設定が ESLint と比べて少ない
 
 -   公式の [Issue](https://github.com/denoland/deno_lint/issues/906) にも挙がっているが、ESLint に比べて設定が少ない
