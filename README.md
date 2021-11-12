@@ -66,4 +66,35 @@ describe('index', () => {
     -   composer.json や packages.config の存在を考えても妥当
 -   一々 `deno run [...options] foo.ts` とするのも疲れるのでタスクランナーも結局必要
     -   [velociraptor](https://velociraptor.run/) が Git Hooks も噛ませられて便利そう
--   `node_modules/` がなくなったのはいいことだと思う
+
+## Merits
+
+### 動作が早い
+
+-   tsc を窓から投げ捨てたくなるレベルで早い
+    -   このリポジトリのソースコードで 5.34 倍ほど実行速度が変わる
+
+#### Deno
+
+```
+time vr run start                                                                                                                                                      21-11-13 - 0:32:17
+<<Hello World>>
+vr run start  0.20s user 0.05s system 100% cpu 0.255 total
+```
+
+#### ts-node
+
+```
+time ts-node src/main.ts                                                                                                                                         [ 1 ] 21-11-13 - 0:39:20
+<<Hello World>>
+ts-node src/main.ts  2.55s user 0.11s system 195% cpu 1.362 total
+```
+
+### `node_modules/` がなくなった
+
+-   忌まわしき混沌が消えました
+-   これでフォルダ移動やアーカイブも楽ちん
+
+### 設定ファイルが綺麗になった気がする
+
+-   設定まみれで長大な package.json や tsconfig.json、ルートフォルダに大量に転がる rc ファイルからサヨナラできるかも…？
