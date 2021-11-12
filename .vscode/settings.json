@@ -1,0 +1,12 @@
+{
+  "deno.enable": true,
+  "deno.suggest.autoImports": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "deno.config": "./deno.jsonc",
+  "[typescript]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+}
